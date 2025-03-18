@@ -8,3 +8,8 @@
  * @copyright Copyright (c) 2025
  * 
  */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "funcoes.h"
+

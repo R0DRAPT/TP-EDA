@@ -8,16 +8,6 @@
 doc/html/
 doc/latex/
 
-# Ignorar ficheiros temporários do LaTeX
-*.aux
-*.log
-*.out
-*.toc
-*.synctex.gz
-*.lof
-*.lol
-*.lot
-
 # Ignorar outros ficheiros temporários ou de sistema
 *.tmp
 *.bak
@@ -27,6 +17,7 @@ Thumbs.db
 
 # Ignorar arquivos objeto
 *.o
+*.a
 
 # Ignorar o executável gerado
-
+programa

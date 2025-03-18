@@ -9,4 +9,10 @@
  * 
  */
 
- 
+#include "dados.h"
+
+#ifndef FUNCOES_H //Include Guard - evita inclusões múltiplas do mesmo cabeçalho durante a compilação.
+#define FUNCOES_H
+
+
+#endif
