@@ -14,5 +14,15 @@
 #ifndef FUNCOES_H //Include Guard - evita inclusões múltiplas do mesmo cabeçalho durante a compilação.
 #define FUNCOES_H
 
+/**
+ * @brief Cabeçalho da função "ListarMapaAntenas"
+ * 
+ * \alias ListarMapaAntenas
+ * 
+ * @return Antenas* 
+ */
+Antenas* ListarMapaAntenas();
+
+
 
 #endif

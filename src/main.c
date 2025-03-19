@@ -13,5 +13,7 @@
 #include "funcoes.h"
 
 int main() {
-    
+    //Lista o mapa das antenas
+    ListarMapaAntenas();
+    return 0;
 }

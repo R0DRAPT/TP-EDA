@@ -5,6 +5,14 @@
 Ficheiro de implementação das funções utilizadas no programa. Contém a lógica das operações definidas em \doxylink{funcoes_8h}{funcoes.\+h}.  
 
 
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}funcoes.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8c_a70b746c291c8f93e0d26b1983da786f3}{Listar\+Mapa\+Antenas}} ()
+\begin{DoxyCompactList}\small\item\em Lê o ficheiro "{}mapa\+Antenas.\+txt"{} e imprime o seu conteúdo no terminal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -22,3 +30,23 @@ Rodrigo Miranda (\href{mailto:a31509@alunos.ipca.pt}{\texttt{ a31509@alunos.\+ip
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2025 
 \end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{funcoes_8c_a70b746c291c8f93e0d26b1983da786f3}\index{funcoes.c@{funcoes.c}!ListarMapaAntenas@{ListarMapaAntenas}}
+\index{ListarMapaAntenas@{ListarMapaAntenas}!funcoes.c@{funcoes.c}}
+\doxysubsubsection{\texorpdfstring{ListarMapaAntenas()}{ListarMapaAntenas()}}
+{\footnotesize\ttfamily \label{funcoes_8c_a70b746c291c8f93e0d26b1983da786f3} 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} Listar\+Mapa\+Antenas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Lê o ficheiro "{}mapa\+Antenas.\+txt"{} e imprime o seu conteúdo no terminal. 
+
+Cabeçalho da função "{}\+Listar\+Mapa\+Antenas"{}.
+
+A função abre o ficheiro localizado na pasta "{}\+Ficheiros\+Texto"{} e exibe as informações armazenadas nele.
+
+\begin{DoxyReturn}{Returns}
+Retorna NULL pois não altera a lista ligada, apenas exibe os dados. 
+\end{DoxyReturn}

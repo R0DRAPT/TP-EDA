@@ -9,4 +9,17 @@
  * 
  */
 
- 
+#include <stdio.h>
+
+/**
+ * @struct Antenas
+ * @brief Estrutura que representa uma antena com coordenadas e frequência.
+ * 
+ * Esta estrutura é utilizada para criar uma lista ligada de antenas, onde cada nó 
+ * contém as coordenadas da antena (x, y), a sua frequência e um ponteiro para o próximo nó.
+ */
+typedef struct Antenas{
+    float x, y; /**< Coordenada X e Y da antena */
+    char freq; /**< Frequencia da antena representada por um caracter */
+    struct Antenas *prox; /**< Ponteiro para o proximo nó da lista */
+}Antenas;
