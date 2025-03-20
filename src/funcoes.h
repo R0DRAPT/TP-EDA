@@ -23,6 +23,9 @@
  */
 Antenas* ListarMapaAntenas();
 
+Antenas* CriarAntenaFim(Antenas* inicio, char freq, int x, int y);
+
+void ListarAntenas(Antenas* inicio);
 
 
 #endif

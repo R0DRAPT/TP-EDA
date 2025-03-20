@@ -41,3 +41,55 @@ Antenas* ListarMapaAntenas() {
     return NULL;
 }
 
+/**
+ * @brief Cria uma nova antena e insere-a no fim da lista ligada.
+ * 
+ * Esta função aloca memória para uma nova antena, define os seus atributos
+ * e adiciona-a ao final da lista ligada, garantindo a ordem FIFO (First In, First Out).
+ * 
+ * @param inicio Ponteiro para o início da lista ligada de antenas.
+ * @param freq Frequência da nova antena.
+ * @param x Coordenada X da nova antena.
+ * @param y Coordenada Y da nova antena.
+ * @return Antenas* Retorna o ponteiro para o início da lista ligada.
+ */
+Antenas* CriarAntenaFim(Antenas* inicio, char freq, int x, int y) {
+    // Guarda memória para uma nova antena
+    Antenas* nova = (Antenas*)malloc(sizeof(Antenas));
+    if (nova == NULL) {
+        printf("Erro ao alocar memória!\n");
+        return inicio;
+    }
+
+    // Inicializa os valores da antena
+    nova->x = x;
+    nova->y = y;
+    nova->freq = freq;
+    nova->prox = NULL; // Como vai ser inserida no final, o próximo vai ser NULL
+
+    printf("\nAntena criada: Frequência: %c; X: %d; Y: %d\n\n", nova->freq, nova->x, nova->y);
+
+    // Se a lista estiver vazia, a nova antena será a primeira
+    if (inicio == NULL) {
+        return nova;
+    }
+
+    // Percorre a lista até encontrar o último elemento
+    Antenas* atual = inicio;
+    while (atual->prox != NULL) { //a variavel atual ira percorrer a lista até que o proximo seja NULL == Chegou ao fim
+        atual = atual->prox; 
+    }
+
+    // Insere no final
+    atual->prox = nova;
+
+    return inicio;
+}
+
+void ListarAntenas(Antenas* inicio) {
+    Antenas* atual = inicio;
+    while (atual != NULL) {
+        printf("Antena: Frequência %c | Posição (%d, %d)\n", atual->freq, atual->x, atual->y);
+        atual = atual->prox;
+    }
+}

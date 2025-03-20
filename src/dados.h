@@ -19,7 +19,7 @@
  * contém as coordenadas da antena (x, y), a sua frequência e um ponteiro para o próximo nó.
  */
 typedef struct Antenas{
-    float x, y; /**< Coordenada X e Y da antena */
+    int x, y; /**< Coordenada X e Y da antena */
     char freq; /**< Frequencia da antena representada por um caracter */
     struct Antenas *prox; /**< Ponteiro para o proximo nó da lista */
 }Antenas;
