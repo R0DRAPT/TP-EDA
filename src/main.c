@@ -22,9 +22,16 @@ int main() {
 
     //Criar e insere a antena no fim da lista
     listaAntenas = CriarAntenaFim(listaAntenas, 'A', 1, 3);
+    listaAntenas = CriarAntenaFim(listaAntenas, 'B', 5, 1);
+    listaAntenas = CriarAntenaFim(listaAntenas, 'C', 2, 8);
 
     //Lista uma antena
     ListarAntenas(listaAntenas);
 
+    //Remover uma antena
+    listaAntenas = RemoverAntena(listaAntenas, 1, 3);
+
+    //Limpa a memoria (Sempre no fim)
+    LimparMemoria(listaAntenas);
     return 0;   
 }

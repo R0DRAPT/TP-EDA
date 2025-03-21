@@ -10,7 +10,15 @@ Ficheiro de cabeçalho onde são declaradas as assinaturas das funções impleme
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8h_a70b746c291c8f93e0d26b1983da786f3}{Listar\+Mapa\+Antenas}} ()
-\begin{DoxyCompactList}\small\item\em Cabeçalho da função "{}\+Listar\+Mapa\+Antenas"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Lê o ficheiro "{}mapa\+Antenas.\+txt"{} e imprime o seu conteúdo no terminal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8h_acb190f9ed3c9511d0490efa436854f58}{Criar\+Antena\+Fim}} (\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}inicio, char freq, int x, int y)
+\begin{DoxyCompactList}\small\item\em Cria uma nova antena e insere-\/a no fim da lista ligada. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funcoes_8h_a43cc41c3c699a563a8aaa13885e9e2e3}{Listar\+Antenas}} (\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}inicio)
+\begin{DoxyCompactList}\small\item\em Lista todas as antenas na lista ligada. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funcoes_8h_a6a2bc1714f8b41d611fa0fc2a3ccc659}{Limpar\+Memoria}} (\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}inicio)
+\begin{DoxyCompactList}\small\item\em Liberta a memória alocada para a lista ligada de antenas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8h_afb9a9101e88b663b1abc09ec24c18ed1}{Remover\+Antena}} (\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}inicio, \mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}x, \mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}y)
+\begin{DoxyCompactList}\small\item\em Remove uma antena da lista ligada com base nas coordenadas fornecidas. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -31,6 +39,92 @@ Copyright (c) 2025
 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{funcoes_8h_acb190f9ed3c9511d0490efa436854f58}\index{funcoes.h@{funcoes.h}!CriarAntenaFim@{CriarAntenaFim}}
+\index{CriarAntenaFim@{CriarAntenaFim}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{CriarAntenaFim()}{CriarAntenaFim()}}
+{\footnotesize\ttfamily \label{funcoes_8h_acb190f9ed3c9511d0490efa436854f58} 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} Criar\+Antena\+Fim (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}}]{inicio}{, }\item[{char}]{freq}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Cria uma nova antena e insere-\/a no fim da lista ligada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Ponteiro para o início da lista ligada. \\
+\hline
+{\em freq} & Frequência da nova antena. \\
+\hline
+{\em x} & Coordenada X da antena. \\
+\hline
+{\em y} & Coordenada Y da antena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Antenas\texorpdfstring{$\ast$}{*} Retorna o ponteiro para o início da lista.
+\end{DoxyReturn}
+Esta função aloca memória para uma nova antena, define os seus atributos e adiciona-\/a ao final da lista ligada, garantindo a ordem FIFO (First In, First Out).
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Ponteiro para o início da lista ligada de antenas. \\
+\hline
+{\em freq} & Frequência da nova antena. \\
+\hline
+{\em x} & Coordenada X da nova antena. \\
+\hline
+{\em y} & Coordenada Y da nova antena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Antenas\texorpdfstring{$\ast$}{*} Retorna o ponteiro para o início da lista ligada. 
+\end{DoxyReturn}
+\Hypertarget{funcoes_8h_a6a2bc1714f8b41d611fa0fc2a3ccc659}\index{funcoes.h@{funcoes.h}!LimparMemoria@{LimparMemoria}}
+\index{LimparMemoria@{LimparMemoria}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{LimparMemoria()}{LimparMemoria()}}
+{\footnotesize\ttfamily \label{funcoes_8h_a6a2bc1714f8b41d611fa0fc2a3ccc659} 
+void Limpar\+Memoria (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}}]{inicio}{}\end{DoxyParamCaption})}
+
+
+
+Liberta a memória alocada para a lista ligada de antenas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Ponteiro para o início da lista ligada.\\
+\hline
+\end{DoxyParams}
+Esta função percorre toda a lista ligada e liberta a memória ocupada por cada nó.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Ponteiro para o início da lista ligada de antenas. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{funcoes_8h_a43cc41c3c699a563a8aaa13885e9e2e3}\index{funcoes.h@{funcoes.h}!ListarAntenas@{ListarAntenas}}
+\index{ListarAntenas@{ListarAntenas}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{ListarAntenas()}{ListarAntenas()}}
+{\footnotesize\ttfamily \label{funcoes_8h_a43cc41c3c699a563a8aaa13885e9e2e3} 
+void Listar\+Antenas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}}]{inicio}{}\end{DoxyParamCaption})}
+
+
+
+Lista todas as antenas na lista ligada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Ponteiro para o início da lista ligada.\\
+\hline
+\end{DoxyParams}
+Lista todas as antenas na lista ligada.
+
+A função percorre a lista ligada e imprime no terminal as informações de cada antena.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Ponteiro para o início da lista ligada de antenas. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{funcoes_8h_a70b746c291c8f93e0d26b1983da786f3}\index{funcoes.h@{funcoes.h}!ListarMapaAntenas@{ListarMapaAntenas}}
 \index{ListarMapaAntenas@{ListarMapaAntenas}!funcoes.h@{funcoes.h}}
 \doxysubsubsection{\texorpdfstring{ListarMapaAntenas()}{ListarMapaAntenas()}}
@@ -39,17 +133,51 @@ Copyright (c) 2025
 
 
 
-Cabeçalho da função "{}\+Listar\+Mapa\+Antenas"{}. 
-
-\textbackslash{}alias Listar\+Mapa\+Antenas
+Lê o ficheiro "{}mapa\+Antenas.\+txt"{} e imprime o seu conteúdo no terminal. 
 
 \begin{DoxyReturn}{Returns}
-Antenas\texorpdfstring{$\ast$}{*}
+Antenas\texorpdfstring{$\ast$}{*} Retorna NULL, pois não altera a lista ligada.
 \end{DoxyReturn}
-Cabeçalho da função "{}\+Listar\+Mapa\+Antenas"{}.
-
 A função abre o ficheiro localizado na pasta "{}\+Ficheiros\+Texto"{} e exibe as informações armazenadas nele.
 
 \begin{DoxyReturn}{Returns}
 Retorna NULL pois não altera a lista ligada, apenas exibe os dados. 
+\end{DoxyReturn}
+\Hypertarget{funcoes_8h_afb9a9101e88b663b1abc09ec24c18ed1}\index{funcoes.h@{funcoes.h}!RemoverAntena@{RemoverAntena}}
+\index{RemoverAntena@{RemoverAntena}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{RemoverAntena()}{RemoverAntena()}}
+{\footnotesize\ttfamily \label{funcoes_8h_afb9a9101e88b663b1abc09ec24c18ed1} 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} Remover\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}}]{inicio}{, }\item[{\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}}]{x}{, }\item[{\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Remove uma antena da lista ligada com base nas coordenadas fornecidas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Ponteiro para o início da lista ligada. \\
+\hline
+{\em x} & Ponteiro para a coordenada X da antena a ser removida. \\
+\hline
+{\em y} & Ponteiro para a coordenada Y da antena a ser removida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Antenas\texorpdfstring{$\ast$}{*} Retorna o ponteiro para o início da lista após a remoção.
+\end{DoxyReturn}
+Remove uma antena da lista ligada com base nas coordenadas fornecidas.
+
+Esta função remove uma antena específica da lista ligada com base nos ponteiros fornecidos.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Ponteiro para o início da lista ligada de antenas. \\
+\hline
+{\em x} & Ponteiro para a coordenada X da antena a ser removida. \\
+\hline
+{\em y} & Ponteiro para a coordenada Y da antena a ser removida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Antenas\texorpdfstring{$\ast$}{*} Retorna o ponteiro para o início da lista ligada após a remoção. 
 \end{DoxyReturn}

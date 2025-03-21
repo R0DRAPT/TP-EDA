@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_0',['y',['../struct_antenas.html#aa4f0d3eebc3c443f9be81bf48561a217',1,'Antenas']]]
+  ['prox_0',['prox',['../struct_antenas.html#aaf9d49f0ec999ad34ab0b5cd0a926974',1,'Antenas']]]
 ];

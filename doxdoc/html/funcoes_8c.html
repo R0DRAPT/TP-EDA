@@ -105,6 +105,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a70b746c291c8f93e0d26b1983da786f3" id="r_a70b746c291c8f93e0d26b1983da786f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_antenas.html">Antenas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70b746c291c8f93e0d26b1983da786f3">ListarMapaAntenas</a> ()</td></tr>
 <tr class="memdesc:a70b746c291c8f93e0d26b1983da786f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê o ficheiro "mapaAntenas.txt" e imprime o seu conteúdo no terminal.  <br /></td></tr>
 <tr class="separator:a70b746c291c8f93e0d26b1983da786f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb190f9ed3c9511d0490efa436854f58" id="r_acb190f9ed3c9511d0490efa436854f58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_antenas.html">Antenas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb190f9ed3c9511d0490efa436854f58">CriarAntenaFim</a> (<a class="el" href="struct_antenas.html">Antenas</a> *inicio, char freq, int x, int y)</td></tr>
+<tr class="memdesc:acb190f9ed3c9511d0490efa436854f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria uma nova antena e insere-a no fim da lista ligada.  <br /></td></tr>
+<tr class="separator:acb190f9ed3c9511d0490efa436854f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43cc41c3c699a563a8aaa13885e9e2e3" id="r_a43cc41c3c699a563a8aaa13885e9e2e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43cc41c3c699a563a8aaa13885e9e2e3">ListarAntenas</a> (<a class="el" href="struct_antenas.html">Antenas</a> *inicio)</td></tr>
+<tr class="memdesc:a43cc41c3c699a563a8aaa13885e9e2e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista todas as antenas da lista ligada.  <br /></td></tr>
+<tr class="separator:a43cc41c3c699a563a8aaa13885e9e2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a2bc1714f8b41d611fa0fc2a3ccc659" id="r_a6a2bc1714f8b41d611fa0fc2a3ccc659"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a2bc1714f8b41d611fa0fc2a3ccc659">LimparMemoria</a> (<a class="el" href="struct_antenas.html">Antenas</a> *inicio)</td></tr>
+<tr class="memdesc:a6a2bc1714f8b41d611fa0fc2a3ccc659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liberta a memória alocada para a lista ligada de antenas.  <br /></td></tr>
+<tr class="separator:a6a2bc1714f8b41d611fa0fc2a3ccc659"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb9a9101e88b663b1abc09ec24c18ed1" id="r_afb9a9101e88b663b1abc09ec24c18ed1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_antenas.html">Antenas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb9a9101e88b663b1abc09ec24c18ed1">RemoverAntena</a> (<a class="el" href="struct_antenas.html">Antenas</a> *inicio, <a class="el" href="struct_antenas.html">Antenas</a> *x, <a class="el" href="struct_antenas.html">Antenas</a> *y)</td></tr>
+<tr class="memdesc:afb9a9101e88b663b1abc09ec24c18ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove uma antena da lista ligada.  <br /></td></tr>
+<tr class="separator:afb9a9101e88b663b1abc09ec24c18ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Ficheiro de implementação das funções utilizadas no programa. Contém a lógica das operações definidas em <a class="el" href="funcoes_8h.html" title="Ficheiro de cabeçalho onde são declaradas as assinaturas das funções implementadas em funcoes....">funcoes.h</a>. </p>
@@ -113,6 +125,103 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2025-03-18</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="acb190f9ed3c9511d0490efa436854f58" name="acb190f9ed3c9511d0490efa436854f58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb190f9ed3c9511d0490efa436854f58">&#9670;&#160;</a></span>CriarAntenaFim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_antenas.html">Antenas</a> * CriarAntenaFim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_antenas.html">Antenas</a> *</td>          <td class="paramname"><span class="paramname"><em>inicio</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>freq</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria uma nova antena e insere-a no fim da lista ligada. </p>
+<p>Esta função aloca memória para uma nova antena, define os seus atributos e adiciona-a ao final da lista ligada, garantindo a ordem FIFO (First In, First Out).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inicio</td><td>Ponteiro para o início da lista ligada de antenas. </td></tr>
+    <tr><td class="paramname">freq</td><td>Frequência da nova antena. </td></tr>
+    <tr><td class="paramname">x</td><td>Coordenada X da nova antena. </td></tr>
+    <tr><td class="paramname">y</td><td>Coordenada Y da nova antena. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Antenas* Retorna o ponteiro para o início da lista ligada. </dd></dl>
+
+</div>
+</div>
+<a id="a6a2bc1714f8b41d611fa0fc2a3ccc659" name="a6a2bc1714f8b41d611fa0fc2a3ccc659"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a2bc1714f8b41d611fa0fc2a3ccc659">&#9670;&#160;</a></span>LimparMemoria()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LimparMemoria </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_antenas.html">Antenas</a> *</td>          <td class="paramname"><span class="paramname"><em>inicio</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liberta a memória alocada para a lista ligada de antenas. </p>
+<p>Esta função percorre toda a lista ligada e liberta a memória ocupada por cada nó.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inicio</td><td>Ponteiro para o início da lista ligada de antenas. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a43cc41c3c699a563a8aaa13885e9e2e3" name="a43cc41c3c699a563a8aaa13885e9e2e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43cc41c3c699a563a8aaa13885e9e2e3">&#9670;&#160;</a></span>ListarAntenas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ListarAntenas </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_antenas.html">Antenas</a> *</td>          <td class="paramname"><span class="paramname"><em>inicio</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lista todas as antenas da lista ligada. </p>
+<p>Lista todas as antenas na lista ligada.</p>
+<p>A função percorre a lista ligada e imprime no terminal as informações de cada antena.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inicio</td><td>Ponteiro para o início da lista ligada de antenas. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a70b746c291c8f93e0d26b1983da786f3" name="a70b746c291c8f93e0d26b1983da786f3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70b746c291c8f93e0d26b1983da786f3">&#9670;&#160;</a></span>ListarMapaAntenas()</h2>
 
@@ -129,9 +238,47 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Lê o ficheiro "mapaAntenas.txt" e imprime o seu conteúdo no terminal. </p>
-<p>Cabeçalho da função "ListarMapaAntenas".</p>
 <p>A função abre o ficheiro localizado na pasta "FicheirosTexto" e exibe as informações armazenadas nele.</p>
 <dl class="section return"><dt>Returns</dt><dd>Retorna NULL pois não altera a lista ligada, apenas exibe os dados. </dd></dl>
+
+</div>
+</div>
+<a id="afb9a9101e88b663b1abc09ec24c18ed1" name="afb9a9101e88b663b1abc09ec24c18ed1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb9a9101e88b663b1abc09ec24c18ed1">&#9670;&#160;</a></span>RemoverAntena()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_antenas.html">Antenas</a> * RemoverAntena </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_antenas.html">Antenas</a> *</td>          <td class="paramname"><span class="paramname"><em>inicio</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_antenas.html">Antenas</a> *</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_antenas.html">Antenas</a> *</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove uma antena da lista ligada. </p>
+<p>Remove uma antena da lista ligada com base nas coordenadas fornecidas.</p>
+<p>Esta função remove uma antena específica da lista ligada com base nos ponteiros fornecidos.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inicio</td><td>Ponteiro para o início da lista ligada de antenas. </td></tr>
+    <tr><td class="paramname">x</td><td>Ponteiro para a coordenada X da antena a ser removida. </td></tr>
+    <tr><td class="paramname">y</td><td>Ponteiro para a coordenada Y da antena a ser removida. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Antenas* Retorna o ponteiro para o início da lista ligada após a remoção. </dd></dl>
 
 </div>
 </div>

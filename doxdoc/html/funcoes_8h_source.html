@@ -92,18 +92,29 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <a href="funcoes_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="dados_8h.html">dados.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor"> #include &quot;<a class="code" href="dados_8h.html">dados.h</a>&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#ifndef FUNCOES_H </span><span class="comment">//Include Guard - evita inclusões múltiplas do mesmo cabeçalho durante a compilação.</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define FUNCOES_H</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor"> #ifndef FUNCOES_H </span><span class="comment">//Include Guard - evita inclusões múltiplas do mesmo cabeçalho durante a compilação.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor"> #define FUNCOES_H</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><a class="code hl_struct" href="struct_antenas.html">Antenas</a>* <a class="code hl_function" href="funcoes_8h.html#a70b746c291c8f93e0d26b1983da786f3">ListarMapaAntenas</a>();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> <a class="code hl_struct" href="struct_antenas.html">Antenas</a>* <a class="code hl_function" href="funcoes_8h.html#a70b746c291c8f93e0d26b1983da786f3">ListarMapaAntenas</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> <a class="code hl_struct" href="struct_antenas.html">Antenas</a>* <a class="code hl_function" href="funcoes_8h.html#acb190f9ed3c9511d0490efa436854f58">CriarAntenaFim</a>(<a class="code hl_struct" href="struct_antenas.html">Antenas</a>* inicio, <span class="keywordtype">char</span> freq, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> <span class="keywordtype">void</span> <a class="code hl_function" href="funcoes_8h.html#a43cc41c3c699a563a8aaa13885e9e2e3">ListarAntenas</a>(<a class="code hl_struct" href="struct_antenas.html">Antenas</a>* inicio);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> <span class="keywordtype">void</span> <a class="code hl_function" href="funcoes_8h.html#a6a2bc1714f8b41d611fa0fc2a3ccc659">LimparMemoria</a>(<a class="code hl_struct" href="struct_antenas.html">Antenas</a>* inicio);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> <a class="code hl_struct" href="struct_antenas.html">Antenas</a>* <a class="code hl_function" href="funcoes_8h.html#afb9a9101e88b663b1abc09ec24c18ed1">RemoverAntena</a>(<a class="code hl_struct" href="struct_antenas.html">Antenas</a>* inicio, <a class="code hl_struct" href="struct_antenas.html">Antenas</a>* x, <a class="code hl_struct" href="struct_antenas.html">Antenas</a>* y);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor"> #endif</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="ttc" id="adados_8h_html"><div class="ttname"><a href="dados_8h.html">dados.h</a></div><div class="ttdoc">Ficheiro de cabeçalho dedicado à definição de structs e outros tipos de dados utilizados no programa.</div></div>
-<div class="ttc" id="afuncoes_8h_html_a70b746c291c8f93e0d26b1983da786f3"><div class="ttname"><a href="funcoes_8h.html#a70b746c291c8f93e0d26b1983da786f3">ListarMapaAntenas</a></div><div class="ttdeci">Antenas * ListarMapaAntenas()</div><div class="ttdoc">Cabeçalho da função &quot;ListarMapaAntenas&quot;.</div><div class="ttdef"><b>Definition</b> funcoes.c:24</div></div>
+<div class="ttc" id="afuncoes_8h_html_a43cc41c3c699a563a8aaa13885e9e2e3"><div class="ttname"><a href="funcoes_8h.html#a43cc41c3c699a563a8aaa13885e9e2e3">ListarAntenas</a></div><div class="ttdeci">void ListarAntenas(Antenas *inicio)</div><div class="ttdoc">Lista todas as antenas na lista ligada.</div><div class="ttdef"><b>Definition</b> funcoes.c:96</div></div>
+<div class="ttc" id="afuncoes_8h_html_a6a2bc1714f8b41d611fa0fc2a3ccc659"><div class="ttname"><a href="funcoes_8h.html#a6a2bc1714f8b41d611fa0fc2a3ccc659">LimparMemoria</a></div><div class="ttdeci">void LimparMemoria(Antenas *inicio)</div><div class="ttdoc">Liberta a memória alocada para a lista ligada de antenas.</div><div class="ttdef"><b>Definition</b> funcoes.c:111</div></div>
+<div class="ttc" id="afuncoes_8h_html_a70b746c291c8f93e0d26b1983da786f3"><div class="ttname"><a href="funcoes_8h.html#a70b746c291c8f93e0d26b1983da786f3">ListarMapaAntenas</a></div><div class="ttdeci">Antenas * ListarMapaAntenas()</div><div class="ttdoc">Lê o ficheiro &quot;mapaAntenas.txt&quot; e imprime o seu conteúdo no terminal.</div><div class="ttdef"><b>Definition</b> funcoes.c:24</div></div>
+<div class="ttc" id="afuncoes_8h_html_acb190f9ed3c9511d0490efa436854f58"><div class="ttname"><a href="funcoes_8h.html#acb190f9ed3c9511d0490efa436854f58">CriarAntenaFim</a></div><div class="ttdeci">Antenas * CriarAntenaFim(Antenas *inicio, char freq, int x, int y)</div><div class="ttdoc">Cria uma nova antena e insere-a no fim da lista ligada.</div><div class="ttdef"><b>Definition</b> funcoes.c:56</div></div>
+<div class="ttc" id="afuncoes_8h_html_afb9a9101e88b663b1abc09ec24c18ed1"><div class="ttname"><a href="funcoes_8h.html#afb9a9101e88b663b1abc09ec24c18ed1">RemoverAntena</a></div><div class="ttdeci">Antenas * RemoverAntena(Antenas *inicio, Antenas *x, Antenas *y)</div><div class="ttdoc">Remove uma antena da lista ligada com base nas coordenadas fornecidas.</div><div class="ttdef"><b>Definition</b> funcoes.c:131</div></div>
 <div class="ttc" id="astruct_antenas_html"><div class="ttname"><a href="struct_antenas.html">Antenas</a></div><div class="ttdoc">Estrutura que representa uma antena com coordenadas e frequência.</div><div class="ttdef"><b>Definition</b> dados.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
