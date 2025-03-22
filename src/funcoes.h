@@ -22,6 +22,17 @@
 Antenas* ListarMapaAntenas();
 
 /**
+ * @brief Carrega as antenas do ficheiro (ex.: "mapaAntenas.txt") para uma lista ligada.
+ * 
+ * Percorre o ficheiro linha a linha, coluna a coluna; se encontrar um caractere visível
+ * (diferente de '.' e de '\n'), insere na lista como antena.
+ * 
+ * @param filename Caminho para o ficheiro (ex.: "FicheirosTexto/mapaAntenas.txt").
+ * @return Antenas* Retorna a lista de antenas lida do ficheiro.
+ */
+Antenas* CarregarMapaAntenas(const char* filename);
+
+/**
  * @brief Cria uma nova antena e insere-a no fim da lista ligada.
  * 
  * @param inicio Ponteiro para o início da lista ligada.
@@ -56,16 +67,14 @@ void LimparMemoria(Antenas* inicio);
  */
 Antenas* RemoverAntena(Antenas* inicio, int x, int y);
 
+
+void EfeitoNefasto(Antenas* inicio);
+
 /**
- * @brief 
+ * @brief Lê o ficheiro "mapaAntenasComNefasto.txt" e imprime o seu conteúdo no terminal.
  * 
- * @param inicio 
- * @param freq 
- * @param x 
- * @param y 
- * @return Antenas* 
+ * @return Antenas* Retorna NULL, pois não altera a lista ligada.
  */
-Antenas* EfeitoNefastoFrente(Antenas* inicio, Antenas* freq, Antenas* x, Antenas* y);
- 
- #endif
+Antenas* ListarMapaAntenasComNefasto();
+#endif
  
