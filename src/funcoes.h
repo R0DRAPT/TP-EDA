@@ -58,6 +58,17 @@ Antenas* InserirAntenaFim(Antenas* inicio, char freq, int x, int y);
 Antenas* InserirAntenaInicio(Antenas* inicio, char freq, int x, int y);
 
 /**
+ * @brief Insere ordenadamente na lista ligada
+ * 
+ * @param inicio 
+ * @param freq 
+ * @param x 
+ * @param y 
+ * @return Antenas* 
+ */
+Antenas* InserirAntenasOrdenado(Antenas* inicio, char freq, int x, int y);
+
+/**
  * @brief Imprime no terminal a lista ligada das antenas
  * 
  */

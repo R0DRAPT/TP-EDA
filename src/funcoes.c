@@ -73,7 +73,7 @@ Antenas* InserirAntenaInicio(Antenas* inicio, char freq, int x, int y) {
     nova->y = y;
     nova->freq = freq;
     
-    // Faz a nova antena apontar para o antigo primeiro nó da lista
+    // Faz a nova antena apontar para o antigo primeiro node da lista
     nova->prox = inicio;
 
     // Retorna a nova antena como o início da lista
@@ -130,6 +130,107 @@ Antenas* InserirAntenaFim(Antenas* inicio, char freq, int x, int y) {
     atual->prox = nova; //ultimo elemento da lista aponta para "nova" assim fica o novo último elemento
 
     return inicio;
+}
+
+/**
+ * @brief Insere uma antena na lista de antenas de forma ordenada por coordenadas (x, y).
+ *
+ * Esta função insere um novo nó contendo os dados da antena (frequência, x e y) na lista
+ * ligada de antenas, mantendo a ordem crescente das coordenadas. Se uma antena com as
+ * mesmas coordenadas já existir na lista, a função não fará a inserção.
+ *  
+ * @param inicio 
+ * @param freq 
+ * @param x 
+ * @param y 
+ * @return Antenas* 
+ */
+Antenas* InserirAntenasOrdenado(Antenas* inicio, char freq, int x, int y) {
+    // Cria o novo nó para a antena
+    Antenas* novo = (Antenas*)malloc(sizeof(Antenas));
+    if (novo == NULL) {
+        printf("Erro ao alocar memória!\n");
+        return inicio; // Se não conseguir alocar memória, retorna a lista original
+    }
+    novo->freq = freq;
+    novo->x = x;
+    novo->y = y;
+    novo->prox = NULL;
+
+    // Se a lista estiver vazia, o novo nó é o início
+    if (inicio == NULL) {
+        return novo;
+    }
+
+    // Se o novo nó deve ser inserido no início (ou antes do primeiro da lista)
+    if (x < inicio->x || (x == inicio->x && y < inicio->y)) {
+        novo->prox = inicio;
+        return novo; // O novo nó se torna o início da lista
+    }
+
+    // Percorre a lista para encontrar a posição correta de inserção
+    Antenas* aux = inicio;
+    while (aux->prox != NULL && 
+          (aux->prox->x < x || (aux->prox->x == x && aux->prox->y < y))) {
+        aux = aux->prox;
+    }
+
+    // Insere o novo nó na posição correta
+    novo->prox = aux->prox;
+    aux->prox = novo;
+
+    return inicio; // Retorna o ponteiro atualizado da lista
+}
+
+/**
+ * @brief Modifica as propriedades de uma antena existente na lista encadeada.
+ * 
+ * Esta função procura uma antena nas coordenadas fornecidas (x, y) e, se encontrada,
+ * altera a sua frequência e move-a para novas coordenadas (novoX, novoY), garantindo
+ * que não haja duplicação de antenas nessas novas coordenadas.
+ * 
+ * @param inicio Ponteiro para o início da lista encadeada de antenas.
+ * @param x Coordenada X da antena a ser modificada.
+ * @param y Coordenada Y da antena a ser modificada.
+ * @param novaFreq Nova frequência a ser atribuída à antena.
+ * @param novoX Nova coordenada X para onde a antena será movida.
+ * @param novoY Nova coordenada Y para onde a antena será movida.
+ * @return Antenas* Retorna o ponteiro para o início da lista (possivelmente modificada).
+ * 
+ * @note Se já existir uma antena nas novas coordenadas (novoX, novoY), a modificação não ocorre.
+ * @note Caso a antena não seja encontrada, a lista mantém-se inalterada.
+ */
+Antenas* ModificarAntena(Antenas* inicio, int x, int y, char novaFreq, int novoX, int novoY) {
+    // Verifica se a lista está vazia
+    if (inicio == NULL) {
+        return NULL;
+    }
+
+    Antenas* atual = inicio;
+
+    // Percorre a lista para encontrar a antena nas coordenadas fornecidas
+    while (atual != NULL) {
+        if (atual->x == x && atual->y == y) {
+            // Verifica se já existe uma antena nas novas coordenadas para evitar duplicação
+            Antenas* aux = inicio;
+            while (aux != NULL) {
+                if (aux->x == novoX && aux->y == novoY) {
+                    return inicio; // Mantém a lista sem alterações (Ocorre quando ja existe uma antena naquelas coordenadas)
+                }
+                aux = aux->prox;
+            }
+
+            // Modifica os valores da antena
+            atual->freq = novaFreq;
+            atual->x = novoX;
+            atual->y = novoY;
+
+            return inicio; // Retorna a lista atualizada
+        }
+        atual = atual->prox;
+    }
+
+    return inicio; // Retorna a lista original se a antena não for encontrada
 }
 
 /**
@@ -452,57 +553,6 @@ ListaEfeitoNefasto* ListarNefasto(const char *nomeFicheiro, int tamLinha) {
 }
 
 /**
- * @brief Modifica as propriedades de uma antena existente na lista encadeada.
- * 
- * Esta função procura uma antena nas coordenadas fornecidas (x, y) e, se encontrada,
- * altera a sua frequência e move-a para novas coordenadas (novoX, novoY), garantindo
- * que não haja duplicação de antenas nessas novas coordenadas.
- * 
- * @param inicio Ponteiro para o início da lista encadeada de antenas.
- * @param x Coordenada X da antena a ser modificada.
- * @param y Coordenada Y da antena a ser modificada.
- * @param novaFreq Nova frequência a ser atribuída à antena.
- * @param novoX Nova coordenada X para onde a antena será movida.
- * @param novoY Nova coordenada Y para onde a antena será movida.
- * @return Antenas* Retorna o ponteiro para o início da lista (possivelmente modificada).
- * 
- * @note Se já existir uma antena nas novas coordenadas (novoX, novoY), a modificação não ocorre.
- * @note Caso a antena não seja encontrada, a lista mantém-se inalterada.
- */
-Antenas* ModificarAntena(Antenas* inicio, int x, int y, char novaFreq, int novoX, int novoY) {
-    // Verifica se a lista está vazia
-    if (inicio == NULL) {
-        return NULL;
-    }
-
-    Antenas* atual = inicio;
-
-    // Percorre a lista para encontrar a antena nas coordenadas fornecidas
-    while (atual != NULL) {
-        if (atual->x == x && atual->y == y) {
-            // Verifica se já existe uma antena nas novas coordenadas para evitar duplicação
-            Antenas* aux = inicio;
-            while (aux != NULL) {
-                if (aux->x == novoX && aux->y == novoY) {
-                    return inicio; // Mantém a lista sem alterações (Ocorre quando ja existe uma antena naquelas coordenadas)
-                }
-                aux = aux->prox;
-            }
-
-            // Modifica os valores da antena
-            atual->freq = novaFreq;
-            atual->x = novoX;
-            atual->y = novoY;
-
-            return inicio; // Retorna a lista atualizada
-        }
-        atual = atual->prox;
-    }
-
-    return inicio; // Retorna a lista original se a antena não for encontrada
-}
-
-/**
  * @brief Listagem de forma tabular na consola das antenas e localizações com efeito nefasto.
  * 
  * @param inicioAntenas Ponteiro para o início da lista de antenas.
@@ -572,7 +622,7 @@ Antenas* ImprimirListaFicheiro(Antenas* inicio, const char* nomeFicheiro) {
         // Grava a estrutura auxiliar no arquivo binário
         fwrite(&auxElement, sizeof(AntenasBin), 1, fp);
 
-        // avança para o próximo nó da lista
+        // avança para o próximo node da lista
         aux = aux->prox;
     }
 

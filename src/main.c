@@ -27,7 +27,7 @@
     #pragma region Lista_mapaAntena.txt
     // Lista o mapa das antenas disponíveis
     printf("\n");
-    ListarMapaAntenas("Ficheiros/mapaAntena.txt", 100);
+    ListarMapaAntenas("Ficheiros/mapaAntenas.txt", 100);
     #pragma endregion
 
     #pragma region Carrega_Antenas_Do_mapaAntena
@@ -49,11 +49,12 @@
     // Criação e inserção de antenas no início da lista principal
     ListaAntenasAux = InserirAntenaInicio(ListaAntenasAux, 'A', 1, 1);
     ListaAntenasAux = InserirAntenaInicio(ListaAntenasAux, 'A', 3, 2);
-    ListaAntenasAux = InserirAntenaInicio(ListaAntenasAux, 'B', 5, 1);
 
     // Criação e inserção de antenas no fim da lista principal
-    ListaAntenasAux = InserirAntenaFim(ListaAntenasAux, 'B', 3, 3);
     ListaAntenasAux = InserirAntenaFim(ListaAntenasAux, 'C', 7, 7);
+
+    // Criação e inserção de antenas na lista principal ordenadamente
+    ListaAntenasAux = InserirAntenasOrdenado(ListaAntenasAux, 'J', 6, 6);
 
     // Mostra a lista ligada das antenas
     MostrarLista(ListaAntenasAux);
@@ -105,6 +106,7 @@
     #pragma region Imprimir_ListaAntena_Ficheiro_Bin
     //Imprime o ficheiro binario da lista ligada
     ListaFicheiroBin(ListaAntenasAux, "Ficheiros/Bin_mapaAntena");
+    printf("\n");
     #pragma endregion
 
     #pragma region Limpar_Memoria
