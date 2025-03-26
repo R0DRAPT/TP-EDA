@@ -1,3 +1,6 @@
+#makefile
+#by Rodrigo Miranda
+
 # Nome do compilador
 CC = gcc
 
