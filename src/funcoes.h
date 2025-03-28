@@ -18,10 +18,9 @@
   * @brief Lê o ficheiro "mapaAntenas.txt" e imprime o seu conteúdo no terminal.
   * 
   * @param nomeFicheiro 
-  * @param tamLinha Tamanho para armazenar cada linha do ficheiro
   * @return Antenas* 
   */
-Antenas* ListarMapaAntenas(const char *nomeFicheiro, int tamLinha);
+Antenas* ListarMapaAntenas(const char *nomeFicheiro);
 
 /**
  * @brief Carrega as antenas do ficheiro (ex.: "mapaAntenas.txt") para uma lista ligada.
@@ -33,7 +32,7 @@ Antenas* ListarMapaAntenas(const char *nomeFicheiro, int tamLinha);
  * @param tamLinha Tamanho para armazenar cada linha do ficheiro
  * @return Antenas* Retorna a lista de antenas lida do ficheiro.
  */
-Antenas* CarregarMapaAntenas(const char *nomeFicheiro, int tamLinha);
+Antenas* CarregarMapaAntenas(const char *nomeFicheiro);
 
 /**
  * @brief Cria uma nova antena e insere-a no fim da lista ligada.
@@ -113,7 +112,7 @@ Antenas* RemoverAntena(Antenas* inicio, int x, int y);
   * @param mapaX 
   * @param mapaY 
   */
-void EfeitoNefasto(Antenas* inicio, const char *nomeFicheiro, int tamLinha, int mapaX, int mapaY);
+void EfeitoNefasto(Antenas* inicio, const char *nomeFicheiro, int mapaX, int mapaY);
 
  /**
   * @brief Lê o ficheiro "mapaAntenasComNefasto.txt" e imprime o seu conteúdo no terminal.
@@ -122,7 +121,7 @@ void EfeitoNefasto(Antenas* inicio, const char *nomeFicheiro, int tamLinha, int 
   * @param tamLinha
   * @return Antenas* 
   */
-Antenas* ListarMapaAntenasComNefasto(const char *nomeFicheiro, int tamLinha);
+Antenas* ListarMapaAntenasComNefasto(const char *nomeFicheiro);
 
  /**
   * @brief Adiciona os efeitos nefastos à lista ligada e os imprime no terminal.
@@ -131,7 +130,7 @@ Antenas* ListarMapaAntenasComNefasto(const char *nomeFicheiro, int tamLinha);
   * @param tamLinha 
   * @return ListaEfeitoNefasto* 
   */
-ListaEfeitoNefasto* ListarNefasto(const char *nomeFicheiro, int tamLinha);
+ListaEfeitoNefasto* ListarNefasto(const char *nomeFicheiro);
 
 /**
  * @brief Modifica uma antena na lista ligada

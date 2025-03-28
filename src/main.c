@@ -27,12 +27,12 @@
     #pragma region Lista_mapaAntena.txt
     // Lista o mapa das antenas disponíveis
     printf("\n");
-    ListarMapaAntenas("Ficheiros/mapaAntenas.txt", 100);
+    ListarMapaAntenas("Ficheiros/mapaAntenas.txt");
     #pragma endregion
 
     #pragma region Carrega_Antenas_Do_mapaAntena
     // Carrega as antenas a partir de um ficheiro de texto
-    ListaAntenasAux = CarregarMapaAntenas("Ficheiros/mapaAntenas.txt", 256);
+    ListaAntenasAux = CarregarMapaAntenas("Ficheiros/mapaAntenas.txt");
     if (ListaAntenasAux == NULL) {
         return 1; // Retorna 1 em caso de erro.
     }
@@ -80,16 +80,16 @@
     #pragma region Calcular_Efeito_Nefasto
     // Chamada da função para calcular e apresentar os efeitos nefastos
     printf("\nEfeito nefasto calculado\n");
-    EfeitoNefasto(listaAntenas, "Ficheiros/mapaAntenas.txt", 100, 100, 100);
+    EfeitoNefasto(listaAntenas, "Ficheiros/mapaAntenas.txt", 100, 100);
     printf("\n");
     #pragma endregion
    
     #pragma region Listar_Efeito_Nefasto
     // Lista o mapa das antenas com o efeito nefasto
-    ListarMapaAntenasComNefasto("Ficheiros/mapaAntenasComNefasto.txt", 100);
+    ListarMapaAntenasComNefasto("Ficheiros/mapaAntenasComNefasto.txt");
 
     // Lista o efeito nefasto guardado na lista ligada
-    listaNefasto = ListarNefasto("Ficheiros/mapaAntenasComNefasto.txt", 100);
+    listaNefasto = ListarNefasto("Ficheiros/mapaAntenasComNefasto.txt");
     #pragma endregion
 
     #pragma region Listagem_Tabular

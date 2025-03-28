@@ -14,6 +14,8 @@
 #include <string.h>
 #include "funcoes.h"
 
+#define tamLinha 100
+
 /**
  * @brief Lê o ficheiro "mapaAntenas.txt" e imprime o seu conteúdo no terminal.
  * 
@@ -22,7 +24,7 @@
  * 
  * @return Retorna NULL pois não altera a lista ligada, apenas exibe os dados.
  */
-Antenas* ListarMapaAntenas(const char *nomeFicheiro, int tamLinha) {     
+Antenas* ListarMapaAntenas(const char *nomeFicheiro) {     
     FILE *file = fopen(nomeFicheiro, "r");
 
     // Verifica se o ficheiro foi aberto com sucesso
@@ -360,7 +362,7 @@ Antenas* RemoverAntena(Antenas* inicio, int x, int y) {
  * @param filename Caminho para o ficheiro de texto.
  * @return Antenas* Retorna a lista de antenas encontradas no mapa.
  */
-Antenas* CarregarMapaAntenas(const char *nomeFicheiro, int tamLinha) {
+Antenas* CarregarMapaAntenas(const char *nomeFicheiro) {
     FILE *fp = fopen(nomeFicheiro, "r");
     if (fp == NULL) {
         return NULL; //Erro ao abrir o ficheiro
@@ -396,7 +398,7 @@ Antenas* CarregarMapaAntenas(const char *nomeFicheiro, int tamLinha) {
  * 
  * @return Retorna NULL pois não altera a lista ligada, apenas exibe os dados.
  */
-Antenas* ListarMapaAntenasComNefasto(const char *nomeFicheiro, int tamLinha) {
+Antenas* ListarMapaAntenasComNefasto(const char *nomeFicheiro) {
     FILE *file = fopen(nomeFicheiro, "r");
 
     // Verifica se o ficheiro foi aberto com sucesso
@@ -425,7 +427,7 @@ Antenas* ListarMapaAntenasComNefasto(const char *nomeFicheiro, int tamLinha) {
  * 
  * @param lista Ponteiro para o início da lista ligada de antenas.
  */
-void EfeitoNefasto(Antenas* inicio, const char *nomeFicheiro, int tamLinha, int mapaX, int mapaY) {
+void EfeitoNefasto(Antenas* inicio, const char *nomeFicheiro, int mapaX, int mapaY) {
     if (inicio == NULL) {
         return;
     }
@@ -502,7 +504,7 @@ void EfeitoNefasto(Antenas* inicio, const char *nomeFicheiro, int tamLinha, int 
  * 
  * @return ListaEfeitoNefasto* Retorna o ponteiro para o início da lista de efeitos nefastos.
  */
-ListaEfeitoNefasto* ListarNefasto(const char *nomeFicheiro, int tamLinha) {
+ListaEfeitoNefasto* ListarNefasto(const char *nomeFicheiro) {
     FILE *fp = fopen(nomeFicheiro, "r");
     if (fp == NULL) {
         printf("Erro ao abrir o ficheiro de efeitos nefastos.\n");
@@ -655,7 +657,7 @@ void ListaFicheiroBin(Antenas* inicio, const char *nomeFicheiro) {
     AntenasBin auxAntena;
     printf("\nLista de Elementos no ficheiro: %s:\n", nomeFicheiro);
     while (fread(&auxAntena, sizeof(AntenasBin), 1, fp) == 1) {
-        printf("%d - (%d, %d)\n", auxAntena.freq, auxAntena.x, auxAntena.y);
+        printf("%c - (%d, %d)\n", auxAntena.freq, auxAntena.x, auxAntena.y);
     }
     
     fclose(fp);
