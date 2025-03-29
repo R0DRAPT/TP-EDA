@@ -29,7 +29,6 @@ Antenas* ListarMapaAntenas(const char *nomeFicheiro);
  * (diferente de '.' e de '\n'), insere na lista como antena.
  * 
  * @param nomeFicheiro Caminho para o ficheiro (ex.: "FicheirosTexto/mapaAntenas.txt").
- * @param tamLinha Tamanho para armazenar cada linha do ficheiro
  * @return Antenas* Retorna a lista de antenas lida do ficheiro.
  */
 Antenas* CarregarMapaAntenas(const char *nomeFicheiro);

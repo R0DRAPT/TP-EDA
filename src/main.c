@@ -75,6 +75,9 @@
     #pragma region Remover_Antena
     // Exemplo de remoção de antena
     ListaAntenasAux = RemoverAntena(ListaAntenasAux, 7, 7);
+    
+    MostrarLista(ListaAntenasAux);
+    printf("\n");
     #pragma endregion
 
     #pragma region Calcular_Efeito_Nefasto
