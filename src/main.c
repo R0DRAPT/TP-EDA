@@ -83,7 +83,7 @@
     #pragma region Calcular_Efeito_Nefasto
     // Chamada da função para calcular e apresentar os efeitos nefastos
     printf("\nEfeito nefasto calculado\n");
-    EfeitoNefasto(listaAntenas, "Ficheiros/mapaAntenas.txt", 100, 100);
+    EfeitoNefasto(ListaAntenasAux, "Ficheiros/mapaAntenas.txt", 100, 100);
     printf("\n");
     #pragma endregion
    
